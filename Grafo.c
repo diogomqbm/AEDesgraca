@@ -10,6 +10,16 @@ struct grafo{
 };
 
 
+int contaVertice(FILE* fp){
+    int count = 0;
+while(!feof){
+    //if(getchar() == ' ')
+        count++;
+}
+rewind(fp);
+return count;
+}
+
 Grafo* cria_Grafo(int nro_vertices, int grau_max){
     Grafo *gr = (Grafo*) malloc(sizeof(struct grafo));
     if(gr != NULL){
@@ -31,4 +41,11 @@ void libera_Grafo(Grafo* gr){
     }
     free(gr->grau);
     free(gr);
+}
+
+int insereAresta(Grafo* gr, int orig, int dest, FILE* fp){
+
+
+
+
 }
