@@ -5,19 +5,17 @@
 
 int main()
 {
-    int count;
-    FILE* file = fopen("texto_base.txt","r+");
+    FILE* fp = fopen("texto_base.txt","r+");
 
     Grafo *gr;
 
-    if(file == NULL){
+    if(fp == NULL){
         printf("Erro ao abrir arquivo\n");
     }
-    char a;
-    fscanf(file,"%c",&a);
-    printf("%c",a);
 
-    contaVertice(file);
+    cria_Grafo(contaVertice(fp),1);
 
+
+    fclose(fp);
     return 0;
 }

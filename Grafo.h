@@ -11,3 +11,5 @@ Grafo *cria_Grafo(int nro_vertices, int grau_max);
 void libera_Grafo(Grafo* gr);
 
 int contaVertice(FILE* fp);
+
+int insereAresta(Grafo* gr, int orig, int dest);
