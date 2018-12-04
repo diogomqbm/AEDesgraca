@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Grafo.h"
+#include "textGenerator.h"
 
 typedef struct grafo Grafo;
 
