@@ -1,5 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Grafo.h"
+
+struct grafo{
+    int nro_vertices;
+    int gra_max;
+    int** arestas;
+    int* grau;
+};
+
 
 Grafo* cria_Grafo(int nro_vertices, int grau_max){
     Grafo *gr = (Grafo*) malloc(sizeof(struct grafo));
