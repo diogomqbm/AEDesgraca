@@ -5,25 +5,31 @@
 
 struct grafo{
     int nro_vertices;
-    char vertices*;
+    char** vertices;
     int gra_max;
     int** arestas;
     int* grau;
 };
 
 
-void insereVertice(FILE fp*, int nro_vertices){
+void insereVertice(FILE* fp, Grafo* gr){
 
-        int c = getc(fp);
-        vertices[0] = c;
+        char c;
+        int i = 0;
+        int j = 0;
+        do {
+        c = fgetc(fp);
 
-    for(int i=1; i<nro_vertices; i++){
-        while((c = getc(fp)) != EOF)
-            if(c != ' ' || c != '.' || c != '!' || c != '?' || c != ',')
-        vertices[i] = strcat(vertices[i],vertices[i-1]);
+        if (c == '\n' || c == ' ')
+            i++;
+         else
+            gr->vertices[i][j];
+            j++;
+    } while (c != EOF);
+        printf("%c",gr->vertices[0]);
     }
 
-}
+
 
 int contaVertice(FILE* fp){
     int count = 0;
@@ -81,7 +87,7 @@ void libera_Grafo(Grafo* gr){
     free(gr);
 }
 
-void printaFrase(Grafo* gr, FILE* fp, int nro_vertices){
+/*void printaFrase(Grafo* gr, FILE* fp, int nro_vertices){
 int count = 0;
 int c;
 int vertices;
@@ -95,5 +101,5 @@ while((c = getc(fp)) != EOF){
         count++;
 }
 }
-
+*/
 
