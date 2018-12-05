@@ -13,3 +13,5 @@ void libera_Grafo(Grafo* gr);
 int contaVertice(FILE* fp);
 
 int insereAresta(Grafo* gr, int orig, int dest);
+
+void insereVertices(FILE* fp, Grafo* gr);

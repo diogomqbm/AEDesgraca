@@ -3,6 +3,8 @@
 #include "Grafo.h"
 #include <string.h>
 
+#define MAX 100
+
 struct grafo{
     int nro_vertices;
     char** vertices;
@@ -12,21 +14,20 @@ struct grafo{
 };
 
 
-void insereVertice(FILE* fp, Grafo* gr){
+void insereVertices(FILE* fp, Grafo* gr){
 
-        char c;
+        int c;
         int i = 0;
         int j = 0;
         do {
         c = fgetc(fp);
-
         if (c == '\n' || c == ' ')
             i++;
          else
-            gr->vertices[i][j];
+            fscanf(fp,"%c",gr->vertices[i]);
             j++;
     } while (c != EOF);
-        printf("%c",gr->vertices[0]);
+    printf("aa %c", gr->vertices[0]);
     }
 
 
@@ -69,6 +70,9 @@ Grafo* cria_Grafo(int nro_vertices, int grau_max){
     if(gr != NULL){
     int i;
     gr->nro_vertices = nro_vertices;
+    gr->vertices = (char**) malloc(nro_vertices*sizeof(char*));
+    for(i=0; i<nro_vertices; i++)
+        gr->vertices[i]=(char*)malloc(MAX*sizeof(char));
     gr->arestas = (int**)malloc(nro_vertices*sizeof(int*));
     for(i=0; i<nro_vertices; i++)
     gr->arestas[i]=(int*)malloc(grau_max*sizeof(int));
@@ -86,20 +90,4 @@ void libera_Grafo(Grafo* gr){
     free(gr->grau);
     free(gr);
 }
-
-/*void printaFrase(Grafo* gr, FILE* fp, int nro_vertices){
-int count = 0;
-int c;
-int vertices;
-vertices = rand() % nro_vertices;
-while((c = getc(fp)) != EOF){
-    if(count ==)
-    if(c > 64 && c < 91)
-    while( c != ' ')
-    printf("%c",c);
-    if(c == ' ')
-        count++;
-}
-}
-*/
 
